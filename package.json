@@ -5,11 +5,11 @@
   "scripts": {
     "start": "nodejs ./bin/www",
     },
-    "engines":{
+  "engines":{
     "node":"~6.11.0"
     "npm":"~5.3.0"
     },
-    "dependencies": {
+  "dependencies": {
     "express": "~4.0.0",
     "static-favicon": "~1.0.0",
     "morgan": "~1.0.0",
