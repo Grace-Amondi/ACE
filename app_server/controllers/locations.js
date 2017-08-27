@@ -1,4 +1,12 @@
+var request = require('request');
+var apiOptions = {
+    server : "http://localhost:3000"
+};
+if (process.env.NODE_ENV === 'production'){
+    apiOptions.server = "https://calm-dawn-52163.herokuapp.com/"
+}
 /* GET 'home' page */
+
 module.exports.homelist = function(req, res) {
     res.render('locations-list', {
         title: 'Loc8r - find a place to work with wifi',
@@ -86,4 +94,12 @@ module.exports.addReview = function(req, res) {
             title: 'Review Starcups'
         }
     });
+};
+
+var sendJsonResponse = function(res, status, content) {
+res.status(status);
+res.json(content);
+};
+module.exports.locationsCreate = function (req, res) {
+sendJsonResponse(res, 200, {"status" : "success"});
 };
