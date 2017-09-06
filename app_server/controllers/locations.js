@@ -3,7 +3,7 @@ var apiOptions = {
   server : "http://localhost:3000"
 };
 if (process.env.NODE_ENV === 'production') {
-  apiOptions.server = "calm-dawn-52163.herokuapp.com";
+  apiOptions.server = "https://calm-dawn-52163.herokuapp.com/";
 }
 
 var _isNumeric = function (n) {
@@ -52,9 +52,8 @@ var renderHomepage = function(req, res, responseBody){
       title: 'Loc8r',
       strapline: 'Find places to work with wifi near you!'
     },
-    sidebar: "Looking for wifi and a seat? Loc8r helps you find places to work when out and about. Perhaps with coffee, cake or a pint? Let Loc8r help you find the place you're looking for.",
-    locations: responseBody,
-  });
+    sidebar: "Looking for wifi and a seat? Loc8r helps you find places to work when out and about. Perhaps with coffee, cake or a pint? Let Loc8r help you find the place you're looking for."
+   });
 };
 
 /* GET 'home' page */

@@ -14,15 +14,16 @@ block content
       input#filter(type="text", name="filter", ng-model="textFilter")
       .error {{ message }}
       .row.list-group
-          .col-xs-12.list-group-item(ng-repeat="location in data.locations | filter : textFilter")
-            h4 
-              a(href="/location/{{ location._id}}") {{ location.name }}
-              small.rating-stars(rating-stars, rating="location.rating")
-              span.badge.pull-right.badge-default {{ location.distance | formatDistance }}
-            p.address {{ location.address }}
-            p
-              span.label.label-warning.label-facility(ng-repeat="faciltiy in location.facilities")
-                | {{ facility }}
+        .col-xs-12.list-group-item(ng-repeat="location in data.locations | filter : textFilter")
+          h4 
+            a(href="/location/{{ location._id }}") {{ location.name }}
+            small.rating-stars(rating-stars, rating="location.rating")
+            //- small
+            //-   rating-stars(rating="location.rating")
+            span.badge.pull-right.badge-default {{ location.distance | formatDistance }}
+          p.address {{ location.address }}
+          p
+            span.label.label-warning.label-facility(ng-repeat="facility in location.facilities")
+              | {{ facility }}
     .col-xs-12.col-sm-4 
-      p.lead= sidebar      
-   
+      p.lead= sidebar
