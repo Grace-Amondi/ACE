@@ -3,7 +3,7 @@ var apiOptions = {
   server : "http://localhost:3000"
 };
 if (process.env.NODE_ENV === 'production') {
-  apiOptions.server = "https://calm-dawn-52163.herokuapp.com/";
+  apiOptions.server = "https://getting-mean-loc8r.herokuapp.com";
 }
 
 var _isNumeric = function (n) {
