@@ -1,16 +1,19 @@
+require('dotenv').load();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-require('./app_api/models/db');
 var uglifyJs = require("uglify-js");
 var fs = require('fs');
+var passport = require('passport');
+
+require('./app_api/models/db');
+require('./app_api/config/passport');
 
 var routes = require('./app_server/routes/index');
 var routesApi = require('./app_api/routes/index');
-// var users = require('./app_server/routes/users');
 
 var app = express();
 
@@ -22,12 +25,16 @@ var appClientFiles = [
   'app_client/app.js',
   'app_client/home/home.controller.js',
   'app_client/about/about.controller.js',
+  'app_client/auth/login/login.controller.js',
+  'app_client/auth/register/register.controller.js',
   'app_client/locationDetail/locationDetail.controller.js',
   'app_client/reviewModal/reviewModal.controller.js',
+  'app_client/common/services/authentication.service.js',
   'app_client/common/services/geolocation.service.js',
   'app_client/common/services/loc8rData.service.js',
   'app_client/common/filters/formatDistance.filter.js',
   'app_client/common/filters/addHtmlLinebreaks.filter.js',
+  'app_client/common/directives/navigation/navigation.controller.js',
   'app_client/common/directives/navigation/navigation.directive.js',
   'app_client/common/directives/footerGeneric/footerGeneric.directive.js',
   'app_client/common/directives/pageHeader/pageHeader.directive.js',
@@ -67,6 +74,13 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+// Catch unauthorised errors
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401);
+    res.json({"message" : err.name + ": " + err.message});
+  }
+});
 
 // development error handler
 // will print stacktrace
