@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "sw": "sw-precache --root=app_client --config=sw-precache-config.js",
-    "lint": "tslint \"src/**/*.ts\""
+    "lint": "tslint \"src/**/*.ts\"",
+    "static-serve": "cd app_client && live-server --port=4200 --host=localhost --entry-file=/index.html"
+
   },
   "engines": {
     "node": "~6.11.0",

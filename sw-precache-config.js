@@ -3,9 +3,11 @@
  */
 module.exports = {
   navigateFallback: '/index.html',
-  stripPrefix: 'app_client',
-  root: 'app_client',
+  stripPrefix: 'loc8r',
+  root: 'loc8r/',
   staticFileGlobs: [
-      'app_client'
+      'loc8r/app_client/about/about.controller.js',
+      'images/',
+      '/loc8r/**.js'
   ]
 };
