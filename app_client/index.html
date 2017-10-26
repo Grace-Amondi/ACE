@@ -3,10 +3,31 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="/bootstrap/css/amelia.bootstrap.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2F3BA2">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Weather">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/images/icons/apple-167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-180.png">
+    <link rel="stylesheet" href="bootstrap/css/amelia.bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body ng-view>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      console.log('Service Worker registered');
+    }).catch(function(err) {
+      console.log('Service Worker registration failed: ', err);
+    });
+  }
+</script>
 <script>
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -31,5 +52,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <script src="/javascripts/validation.js"></script>
+<!--<script src="../localforage-1.4.0.js"></script>-->
 </body>
 </html>
