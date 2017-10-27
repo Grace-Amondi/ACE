@@ -106,3 +106,7 @@ app.use(function (err, req, res, next) {
 
 
 module.exports = app;
+
+app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static(path.join(__dirname, 'app_client')));
+
