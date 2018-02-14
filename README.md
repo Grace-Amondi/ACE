@@ -1,6 +1,6 @@
 # loc8r
 This is an app that helps you find places near you with wifi where you can sit down with your laptop and have a peaceful time.
-[View LIVE DEMO](https://calm-dawn-52163.herokuapp.com/)
+[View LIVE DEMO](https://acewifi.herokuapp.com/)
 
 ![alt text](https://github.com/Grace-Amondi/loc8r/blob/master/images/ShapeItApp.png "sample")
 
