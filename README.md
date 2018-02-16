@@ -1,11 +1,11 @@
-# loc8r
+# ACE
 This is an app that helps you find places near you with wifi where you can sit down with your laptop and have a peaceful time.
 [View LIVE DEMO](https://acewifi.herokuapp.com/)
 
 ![alt text](https://github.com/Grace-Amondi/loc8r/blob/master/images/ShapeItApp.png "sample")
 
 
-**How to get loc8r up and running**
+**How to get ACE up and running**
 
 1.Run the following command to clone the repository
 
