@@ -9,7 +9,7 @@ This is an app that helps you find places near you with wifi where you can sit d
 
 1.Run the following command to clone the repository
 
-``` git clone https://github.com/Grace-Amondi/loc8r.git ```
+``` git clone https://github.com/Grace-Amondi/ACE.git ```
             
 2.Install requirements by running the command:
 
