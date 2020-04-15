@@ -66,7 +66,7 @@
   "description": "The streaming build system",
   "devDependencies": {
     "coveralls": "^2.7.0",
-    "eslint": "^1.7.3",
+    "eslint": "^6.8.0",
     "eslint-config-gulp": "^2.0.0",
     "graceful-fs": "^3.0.0",
     "istanbul": "^0.3.0",
